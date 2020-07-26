@@ -20,13 +20,13 @@ const getModuleInfo = (file)=>{
     presets:["@babel/preset-env"]
   })
   // 新增代码
-  const moduleInfo = {file,deps,code}
-  return moduleInfo
+  const result = {file,deps,code}
+  return result
 }
 const parseModules = file => {
   const entry =  getModuleInfo(file)
   const temp = [entry] 
-  const depsGraph = {} //新增代码
+  const result = {} //新增代码
   for (let i = 0;i<temp.length;i++){
     const deps = temp[i].deps
     if (deps){
@@ -39,12 +39,12 @@ const parseModules = file => {
   }
   // 新增代码
   temp.forEach(moduleInfo=>{
-    depsGraph[moduleInfo.file] = {
+    result[moduleInfo.file] = {
       deps:moduleInfo.deps,
       code:moduleInfo.code
     }
   })
-  return depsGraph
+  return result
 }
 module.exports = function (file) {
   const depsGraph = JSON.stringify(parseModules(file))
