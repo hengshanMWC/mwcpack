@@ -1,0 +1,20 @@
+{
+  "name": "demo-webpack",
+  "version": "1.0.0",
+  "main": "bundle.js",
+  "scripts": {
+    "build": "node mwcPack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/parser": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/traverse": "^7.10.5"
+  },
+  "devDependencies": {},
+  "description": ""
+}

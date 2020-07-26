@@ -1,0 +1,5 @@
+const bundle = require('./bundle')
+const createFile = require('./createFile')
+const config = require('../mwcpack.config.js')
+const bundleCode = bundle(config.entry)
+createFile(config.output, bundleCode)
